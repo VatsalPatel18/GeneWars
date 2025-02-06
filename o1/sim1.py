@@ -709,7 +709,7 @@ if __name__ == "__main__":
         print("Saved final model to bacteria_net.pth")
 
     elif args.eval:
-        net = BacteriaNet(BacteriaEnv().observation_size, BacteriaEnv().action_size)
+        net = BacteriaNet(BacteriaEnv().observation_size, BacteriaEnv().action_size, hidden_size=64)
         # net = BacteriaNet(obs_size, action_size, hidden_size=64)
         net.load_state_dict(torch.load("bacteria_net.pth"))
         net.eval()
